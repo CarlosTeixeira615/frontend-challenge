@@ -4,17 +4,23 @@ import 'react-app-polyfill/ie9'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Layout } from 'components'
 
-import { LoginCallback } from 'views'
+import {  Home,LoginCallback } from 'views'
 import { PrivateRoute } from 'components'
-import App from 'App'
 import registerServiceWorker from 'registerServiceWorker'
+import Artista from 'views/Pages/Artista'
+import Buscar from 'views/Pages/Buscas'
 
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route path="/login/callback" component={LoginCallback} />
-      <PrivateRoute path="/" component={App} />
+      <Layout>
+        <Route path="/login/callback" exact component={LoginCallback} />
+        <PrivateRoute path="/artista/:id" exact component={Artista} />
+        <PrivateRoute path="/buscas" exact component={Buscar} />
+        <PrivateRoute path="/" exact component={Home} />
+      </Layout>
     </Switch>
   </Router>,
   document.getElementById('root'),

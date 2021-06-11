@@ -1,4 +1,4 @@
-import MD5 from 'md5'
+// import MD5 from 'md5'
 
 const domain = () => {
   const {
@@ -12,7 +12,7 @@ const getToken = () => {
   return r ? r[1] : undefined
 }
 
-const setToken = token => {
+const setToken = async token => {
   document.cookie = `authenticated_token=${token ||
     ''};path=/;domain=${domain()}`
 }
