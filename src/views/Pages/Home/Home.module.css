@@ -2,5 +2,11 @@
   max-width: 1224px;
   padding: 30px 20px;
   margin: 0 auto;
+  display: flex;
+  flex: 1;
+  height: 60vh;
   font: 16px/14px 'Nunito', sans-serif;
+}
+h1 {
+  line-height: 30px;
 }
